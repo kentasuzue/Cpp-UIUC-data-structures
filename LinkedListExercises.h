@@ -403,8 +403,9 @@ LinkedList<T> LinkedList<T>::merge(const LinkedList<T>& other) const {
   }
   */
 
-  // in the last case both left "working copy" and
-  // right "working copy" have at least one Node
+  // in the last cases:
+  // (a) both left "working copy" and right "working copy" have at least one Node
+  // (b) only one of left "working copy" and right "working copy" have at least one Node
   else {
 
     // std::cout << "left:" << left << std::endl;
@@ -487,9 +488,9 @@ LinkedList<T> LinkedList<T>::merge(const LinkedList<T>& other) const {
     // one of left "working copy" and right "working copy"
     // has been iterated through completely.
     // need to iterate through remainder  of the other "working copy"
-    // following code is identical to prior case
-    // except that ptrLeft replaces left.head_
-    // and ptrRight replaces right.head_
+
+    // in case where only one of left "working copy" and right "working copy"
+    // had at least one Node, preceding while block is skipped due to while condition
 
     // ptrLeftOrRight allows code reuse rather than copying the same code
     // for iterating through left "working copy" and iterating through
